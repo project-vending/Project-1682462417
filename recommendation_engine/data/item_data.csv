@@ -1,0 +1,17 @@
+python
+import csv
+
+header = ['item_name', 'description', 'category']
+rows = [
+    ['item1', 'This is item 1', 'Category A'],
+    ['item2', 'This is item 2', 'Category B'],
+    ['item3', 'This is item 3', 'Category A'],
+    ['item4', 'This is item 4', 'Category C'],
+    ['item5', 'This is item 5', 'Category B']
+]
+
+with open('recommendation_engine/data/item_data.csv', 'w', newline='') as csvfile:
+    writer = csv.writer(csvfile)
+    writer.writerow(header)
+    for row in rows:
+        writer.writerow(row)
