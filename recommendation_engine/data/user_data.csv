@@ -1,0 +1,21 @@
+python
+import csv
+import os
+
+data_dir = "data"
+file_name = "user_data.csv"
+file_path = os.path.join(os.getcwd(), data_dir, file_name)
+
+# Example user data
+users = [
+    {"id": 1, "name": "John Smith", "age": 28},
+    {"id": 2, "name": "Jane Doe", "age": 35},
+    {"id": 3, "name": "Bob Johnson", "age": 42}
+]
+
+# Write headers and data to the CSV file
+with open(file_path, "w", newline="") as csv_file:
+    fieldnames = ["id", "name", "age"]
+    writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
+    writer.writeheader()
+    writer.writerows(users)
